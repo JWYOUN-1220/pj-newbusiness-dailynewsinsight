@@ -1,1 +1,76 @@
-docs/index.html
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PJ-New Business – Daily News & Insight</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>PJ-New Business – Daily News & Insight</h1>
+    <p class="sub">Japan-first + Global impact | Updated daily</p>
+  </header>
+
+  <main class="wrap">
+    <div class="toolbar">
+      <input id="q" placeholder="Search keyword..." />
+      <span id="meta" class="meta"></span>
+    </div>
+
+    <ul id="list" class="list"></ul>
+  </main>
+
+  <script>
+    async function load() {
+      try {
+        const res = await fetch('manifest.json', { cache: 'no-store' });
+        const data = await res.json();
+        const items = (data.items || []).slice().sort((a,b)=> 
+          (b.date||'').localeCompare(a.date||'')
+        );
+
+        const list = document.getElementById('list');
+        const q = document.getElementById('q');
+        const meta = document.getElementById('meta');
+
+        function render() {
+          const term = (q.value || '').toLowerCase().trim();
+          list.innerHTML = '';
+
+          const filtered = term ? items.filter(it =>
+            (it.title||'').toLowerCase().includes(term) ||
+            (it.highlights||[]).join(' ').toLowerCase().includes(term)
+          ) : items;
+
+          meta.textContent = `Total: ${items.length} | Showing: ${filtered.length}`;
+
+          for (const it of filtered) {
+            const li = document.createElement('li');
+            li.className = 'item';
+            li.innerHTML = `
+              <div class="row">
+                <a class="date" href="${it.path}">${it.date}</a>
+                <span class="title">${it.title || ''}</span>
+              </div>
+              <ul class="hl">
+                ${(it.highlights||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('')}
+              </ul>
+            `;
+            list.appendChild(li);
+          }
+        }
+
+        q.addEventListener('input', render);
+        render();
+
+      } catch (err) {
+        document.getElementById('list').innerHTML =
+          `<li class="item">manifest.json not found or invalid.</li>`;
+      }
+    }
+
+    load();
+  </script>
+</body>
+</html>
