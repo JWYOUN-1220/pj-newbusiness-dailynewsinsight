@@ -1,76 +1,52 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PJ-New Business – Daily News & Insight</title>
-  <link rel="stylesheet" href="assets/style.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Daily News & Insight - 2026-02-18</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;line-height:1.45}
+h1{margin:0 0 10px 0}
+.small{font-size:13px;color:#6b7280}
+.section{margin:18px 0;padding:14px 16px;border:1px solid #e5e7eb;border-radius:12px}
+.section h2{margin:0 0 10px 0;font-size:18px}
+ul{margin:0;padding-left:18px}
+li{margin:10px 0}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.sum{color:#374151;margin-top:4px;font-size:13px}
+.empty{color:#6b7280;font-size:13px}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-  <header class="wrap">
-    <h1>PJ-New Business – Daily News & Insight</h1>
-    <p class="sub">Japan-first + Global impact | Updated daily</p>
-  </header>
+<h1>PJ-New Business - Daily News & Insight</h1>
+<div class="small">2026-02-18 (Asia/Tokyo)</div>
 
-  <main class="wrap">
-    <div class="toolbar">
-      <input id="q" placeholder="Search keyword..." />
-      <span id="meta" class="meta"></span>
-    </div>
+<div class="section"><h2>1) Policy / EV</h2><div class="empty">No notable items.</div></div>
 
-    <ul id="list" class="list"></ul>
-  </main>
+<div class="section">
+  <h2>2) Battery Value Chain</h2>
+  <div class="grid">
+    <div class="section"><h2>2-1) Cathode / Precursor</h2><div class="empty">No notable items.</div></div>
+    <div class="section"><h2>2-2) Anode</h2><div class="empty">No notable items.</div></div>
+    <div class="section"><h2>2-3) Next-Gen</h2><div class="empty">No notable items.</div></div>
+  </div>
+</div>
 
-  <script>
-    async function load() {
-      try {
-        const res = await fetch('manifest.json', { cache: 'no-store' });
-        const data = await res.json();
-        const items = (data.items || []).slice().sort((a,b)=> 
-          (b.date||'').localeCompare(a.date||'')
-        );
+<div class="section"><h2>3) Recycling / Minerals</h2><div class="empty">No notable items.</div></div>
+<div class="section"><h2>4) Power / ESS / Data Center</h2><div class="empty">No notable items.</div></div>
+<div class="section"><h2>5) Niche Markets</h2><div class="empty">No notable items.</div></div>
+<div class="section"><h2>6) Hydrogen</h2><div class="empty">No notable items.</div></div>
+<div class="section"><h2>7) CCU</h2><div class="empty">No notable items.</div></div>
+<div class="section"><h2>8) CCS</h2><div class="empty">No notable items.</div></div>
 
-        const list = document.getElementById('list');
-        const q = document.getElementById('q');
-        const meta = document.getElementById('meta');
+<div class="section">
+  <h2>9) POSCO Japan Implications</h2>
+  <h3>Opportunities</h3><ul><li></li><li></li><li></li></ul>
+  <h3>Risks</h3><ul><li></li><li></li><li></li></ul>
+  <h3>Actions this week</h3><ul><li></li><li></li><li></li></ul>
+</div>
 
-        function render() {
-          const term = (q.value || '').toLowerCase().trim();
-          list.innerHTML = '';
-
-          const filtered = term ? items.filter(it =>
-            (it.title||'').toLowerCase().includes(term) ||
-            (it.highlights||[]).join(' ').toLowerCase().includes(term)
-          ) : items;
-
-          meta.textContent = `Total: ${items.length} | Showing: ${filtered.length}`;
-
-          for (const it of filtered) {
-            const li = document.createElement('li');
-            li.className = 'item';
-            li.innerHTML = `
-              <div class="row">
-                <a class="date" href="${it.path}">${it.date}</a>
-                <span class="title">${it.title || ''}</span>
-              </div>
-              <ul class="hl">
-                ${(it.highlights||[]).slice(0,3).map(x=>`<li>${x}</li>`).join('')}
-              </ul>
-            `;
-            list.appendChild(li);
-          }
-        }
-
-        q.addEventListener('input', render);
-        render();
-
-      } catch (err) {
-        document.getElementById('list').innerHTML =
-          `<li class="item">manifest.json not found or invalid.</li>`;
-      }
-    }
-
-    load();
-  </script>
-</body>
-</html>
+</body></html>
