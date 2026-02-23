@@ -1,52 +1,222 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ko">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Daily News & Insight - 2026-02-18</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>POSCO Tokyo Strategic Intelligence Archive</title>
+
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:24px;line-height:1.45}
-h1{margin:0 0 10px 0}
-.small{font-size:13px;color:#6b7280}
-.section{margin:18px 0;padding:14px 16px;border:1px solid #e5e7eb;border-radius:12px}
-.section h2{margin:0 0 10px 0;font-size:18px}
-ul{margin:0;padding-left:18px}
-li{margin:10px 0}
-a{text-decoration:none}
-a:hover{text-decoration:underline}
-.sum{color:#374151;margin-top:4px;font-size:13px}
-.empty{color:#6b7280;font-size:13px}
-.grid{display:grid;grid-template-columns:1fr;gap:14px}
-@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+:root{
+  --posco-blue:#005696;
+  --posco-dark:#003055;
+  --posco-sky:#E7F1FA;
+  --steel-gray:#4A5568;
+  --alert-red:#C53030;
+  --bg-color:#F7FAFC;
+}
+
+body{
+  font-family:'Malgun Gothic','Noto Sans KR',sans-serif;
+  background:var(--bg-color);
+  margin:0;
+  padding:24px;
+  color:#2D3748;
+  line-height:1.6;
+}
+
+.container{
+  max-width:1000px;
+  margin:0 auto;
+  background:#fff;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 6px 24px rgba(0,0,0,.08);
+}
+
+header{
+  border-bottom:3px solid var(--posco-blue);
+  padding-bottom:20px;
+  margin-bottom:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+h1{
+  margin:0;
+  font-size:26px;
+  font-weight:800;
+  color:var(--posco-blue);
+}
+
+.meta{
+  font-size:13px;
+  color:#718096;
+}
+
+.summary-box{
+  background:var(--posco-sky);
+  border-left:6px solid var(--posco-blue);
+  padding:18px 22px;
+  border-radius:6px;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.stats{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+
+.stat-pill{
+  background:#EDF2F7;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.search{
+  margin-bottom:25px;
+}
+
+.search input{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid #E2E8F0;
+  font-size:14px;
+}
+
+.card{
+  border:1px solid #E2E8F0;
+  border-radius:10px;
+  padding:20px;
+  margin-bottom:15px;
+  transition:.2s;
+}
+
+.card:hover{
+  border-color:var(--posco-blue);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+.date{
+  color:var(--alert-red);
+  font-weight:800;
+  font-size:16px;
+}
+
+.card a{
+  display:block;
+  font-size:18px;
+  font-weight:700;
+  margin-top:6px;
+  text-decoration:none;
+  color:#1A202C;
+}
+
+.card a:hover{
+  color:var(--posco-blue);
+}
+
+.tags{
+  font-size:12px;
+  color:#718096;
+  margin-top:8px;
+}
+
+.footer{
+  text-align:center;
+  margin-top:40px;
+  font-size:12px;
+  color:#A0AEC0;
+  border-top:1px solid #E2E8F0;
+  padding-top:20px;
+}
 </style>
 </head>
+
 <body>
-<h1>PJ-New Business - Daily News & Insight</h1>
-<div class="small">2026-02-18 (Asia/Tokyo)</div>
+<div class="container">
 
-<div class="section"><h2>1) Policy / EV</h2><div class="empty">No notable items.</div></div>
-
-<div class="section">
-  <h2>2) Battery Value Chain</h2>
-  <div class="grid">
-    <div class="section"><h2>2-1) Cathode / Precursor</h2><div class="empty">No notable items.</div></div>
-    <div class="section"><h2>2-2) Anode</h2><div class="empty">No notable items.</div></div>
-    <div class="section"><h2>2-3) Next-Gen</h2><div class="empty">No notable items.</div></div>
+<header>
+  <div>
+    <h1>Daily Japan Business Briefing</h1>
+    <div class="meta">POSCO Tokyo Branch | Strategic Intelligence Archive</div>
   </div>
+  <div class="meta" id="updated">Updated: -</div>
+</header>
+
+<div class="summary-box">
+  본 페이지는 n8n 자동화 시스템을 통해 생성된 일본 중심 비즈니스 인텔리전스 리포트의 아카이브 허브입니다.
 </div>
 
-<div class="section"><h2>3) Recycling / Minerals</h2><div class="empty">No notable items.</div></div>
-<div class="section"><h2>4) Power / ESS / Data Center</h2><div class="empty">No notable items.</div></div>
-<div class="section"><h2>5) Niche Markets</h2><div class="empty">No notable items.</div></div>
-<div class="section"><h2>6) Hydrogen</h2><div class="empty">No notable items.</div></div>
-<div class="section"><h2>7) CCU</h2><div class="empty">No notable items.</div></div>
-<div class="section"><h2>8) CCS</h2><div class="empty">No notable items.</div></div>
+<div class="stats" id="stats"></div>
 
-<div class="section">
-  <h2>9) POSCO Japan Implications</h2>
-  <h3>Opportunities</h3><ul><li></li><li></li><li></li></ul>
-  <h3>Risks</h3><ul><li></li><li></li><li></li></ul>
-  <h3>Actions this week</h3><ul><li></li><li></li><li></li></ul>
+<div class="search">
+  <input id="q" placeholder="검색: 날짜(YYYY-MM-DD), 키워드, 태그" />
 </div>
 
-</body></html>
+<div id="list"></div>
+
+<div class="footer">
+  Confidential – Internal Use Only<br/>
+  POSCO Tokyo Strategic Intelligence System
+</div>
+
+</div>
+
+<script>
+async function loadArchive(){
+  try{
+    const res = await fetch('./manifest.json', { cache:'no-store' });
+    const data = await res.json();
+
+    document.getElementById('updated').innerText =
+      "Updated: " + (data.updated_at || "-");
+
+    const reports = data.reports || [];
+
+    document.getElementById('stats').innerHTML = `
+      <div class="stat-pill">총 리포트: ${reports.length}</div>
+      <div class="stat-pill">최신: ${reports[0]?.date || "-"}</div>
+    `;
+
+    const q = document.getElementById('q');
+    const list = document.getElementById('list');
+
+    function render(){
+      const term = (q.value || "").toLowerCase();
+      const filtered = reports.filter(r=>{
+        const hay = (r.date + " " + (r.title||"") + " " + (r.tags||[]).join(" ")).toLowerCase();
+        return !term || hay.includes(term);
+      });
+
+      list.innerHTML = filtered.map(r=>`
+        <div class="card">
+          <div class="date">${r.date}</div>
+          <a href="${r.path}">${r.title || "Daily Report"}</a>
+          <div class="tags">tags: ${(r.tags||[]).join(", ") || "-"}</div>
+        </div>
+      `).join("") || "<div class='meta'>검색 결과 없음</div>";
+    }
+
+    q.addEventListener("input", render);
+    render();
+
+  }catch(e){
+    document.getElementById('list').innerHTML =
+      "<div class='meta'>manifest.json을 불러올 수 없습니다.</div>";
+  }
+}
+
+loadArchive();
+</script>
+
+</body>
+</html>
