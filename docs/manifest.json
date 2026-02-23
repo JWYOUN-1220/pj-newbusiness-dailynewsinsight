@@ -1,4 +1,11 @@
 {
-  "updated_at": null,
-  "reports": []
+  "updated_at": "2026-02-23T07:42:33.647Z",
+  "reports": [
+    {
+      "date": "2026-02-18",
+      "path": "./news/2026-02-18.html",
+      "title": "Daily Japan Business Briefing",
+      "tags": []
+    }
+  ]
 }
